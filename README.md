@@ -28,7 +28,7 @@
 
 ### Объявление правил
 
-"Объявление правил" это: имя данное селектору (или группе селекторов) с сопутствующими им свойствами. Например:
+"Объявление правил" это имя данное селектору (или группе селекторов) с сопутствующими ему свойствами. Например:
 
 ```css
 .listing {
@@ -66,22 +66,16 @@
 
 ## CSS
 
-### Форматтировение
+### Форматирование
 
-* Используйте 2 пробела для отступов
-* Предпочитают подчеркивание CamelCase'у в именах классов.
+* Используйте 2 пробела для отступов.
+* Предпочитайте подчеркивание CamelCase'у в именах классов.
   - Подчеркивания и PascalCasing допустимы, если вы используете БЭМ (смотри [Объектно-ориентированный CSS и БЭМ](#oocss-and-bem) далее)
-* Do not use ID selectors
-* Не используйте селекторы по ID
-* When using multiple selectors in a rule declaration, give each selector its own line.
-* Используя несколько селекторов в объявление правил, переносите каждый селектор на отдельную строку
-* Put a space before the opening brace `{` in rule declarations
-* Ставьте пробел перед открывающими скобками `{` 
-* In properties, put a space after, but not before, the `:` character.
+* Не используйте селекторы по ID.
+* Используя несколько селекторов в объявлении правила, переносите каждый селектор на отдельную строку.
+<!--* Ставьте пробел перед открывающей скобкой `{`.
 * В свойствах ставьте пробел после двоеточия `:`, но не перед.
-* Put closing braces `}` of rule declarations on a new line
 * После объявления свойстав переносите закрывающую скобку `}` на новую строку. 
-* Put blank lines between rule declarations
 * Делайте отступ в одну строку между объявлениями правил.
 
 **Плохо**
@@ -115,44 +109,33 @@
 
 ### Комментарии
 
-* Prefer line comments (`//` in Sass-land) to block comments.
 * Предпочитайте однострочные (`//`) комментарии многострочным .
-* Prefer comments on their own line. Avoid end-of-line comments.
-* Рекомендуется писать комментарии в отдельные строки.
+* Рекомендуется писать комментарии в отдельные строки. Старайтесь избегать комментариев в конце строки.
 * Write detailed comments for code that isn't self-documenting:
-* Пишите детальные комментарии для незадокументированных частей кода
-  - Uses of z-index
+* Пишите детальные комментарии для незадокументированных частей кода:
   - Использование z-index
-  - Compatibility or browser-specific hacks
-  - Совместимость или CSS-хаки
+  - Совместимость с браузерами или CSS-хаки
 
 ### Объектно-ориентированный CSS и БЭМ
 
-We encourage some combination of OOCSS and BEM for these reasons:
-Мы реккомендуем комбинировать Объектно-ориентированный CSS и БЭМ по следующим причинам:
+Мы рекомендуем комбинировать Объектно-ориентированный CSS и БЭМ по следующим причинам:
 
-  * It helps create clear, strict relationships between CSS and HTML
-  * Это помогает создавать чистую свзять между CSS и HTML.
-  * It helps us create reusable, composable components
+  * Это помогает создать чистую, строгую связь между CSS и HTML.
   * Помогает создавать многоразовые, составные компоненты.
-  * It allows for less nesting and lower specificity
-  * Меньше вложенностей низкая спецефичность
-  * It helps in building scalable stylesheets
-  * Способствует созданию скалируемых таблиц стилей.
+  * Меньше вложенностей, низкая специфичность правил.
+  * Способствует созданию масштабируемых таблиц стилей.
 
-**OOCSS**, or “Object Oriented CSS”, is an approach for writing CSS that encourages you to think about your stylesheets as a collection of “objects”: reusuable, repeatable snippets that can be used independently throughout a website.
+
 **OOCSS**, или "Объектно-ориентированный CSS", это подход к написанию CSS, который призывает думать о таблице стилей, как о коллекции "объектов": многоразовых, повторяемых фрагментах кода, которые могут использоваться независимо друг от друга на всём сайте.
-  * Nicole Sullivan's [OOCSS вики](https://github.com/stubbornella/oocss/wiki)
-  * Smashing Magazine's [Введение в Объектно-ориентированный CSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
+  * Nicole Sullivan [OOCSS вики](https://github.com/stubbornella/oocss/wiki)
+  * Smashing Magazine [Введение в Объектно-ориентированный CSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
 
-**BEM**, or “Block-Element-Modifier”, is a _naming convention_ for classes in HTML and CSS. It was originally developed by Yandex with large codebases and scalability in mind, and can serve as a solid set of guidelines for implementing OOCSS.
 **БЭМ**, или "Блок-Элемент-Модификатор", это соглашение об именовании классов в HTML и CSS. Разработано Яндексом с прицелом на большие объёмы кода и масштабируемость. Может послужить как солидный набор правил для использования OOCSS.
   * CSS Trick's [БЭМ 101](https://css-tricks.com/bem-101/)
-  * Harry Roberts' [Введение в БЭМ](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
+  * Harry Roberts [Введение в БЭМ](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
 
-We recommend a variant of BEM with PascalCased “blocks”, which works particularly well when combined with components (e.g. React). Underscores and dashes are still used for modifiers and children.
-Мы реккомендуем вариант БЭМ в котором используется PascalCased "блоки", отлично работающие в связке с компонентами (например React).
-Подчеркивания и тире используются для модификаторов и элементов.
+Мы рекомендуем вариант БЭМ в котором используется PascalCased "блоки", отлично работающие в связке с компонентами (например React).
+Подчеркивания и тире по-прежнему используются для модификаторов и элементов.
 **Примеры**
 
 ```jsx
@@ -180,25 +163,20 @@ function ListingCard() {
 .ListingCard__content { }
 ```
 
-  * `.ListingCard` is the “block” and represents the higher-level component
   * `.ListingCard` является "блоком" и представляет родительский компонент
-  * `.ListingCard__title` is an “element” and represents a descendant of `.ListingCard` that helps compose the block as a whole.
   * `.ListingCard__title` является "элементом" и представляет дочерний компонент `.ListingCard` который позволяет составить блок в целом.
-  * `.ListingCard--featured` is a “modifier” and represents a different state or variation on the `.ListingCard` block.
   * `.ListingCard--featured` является "модификатором" и представляет разные состояния `.ListingCard`.
 
-### Селекторы ID
+### Селекторы по ID
 
 While it is possible to select elements by ID in CSS, it should generally be considered an anti-pattern. ID selectors introduce an unnecessarily high level of [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) to your rule declarations, and they are not reusable.
-Возможность выбирать элементы по ID в CSS должна, как правило, рассматриваться плохой практикой. ID селекторы предоставляют неоправданно высокий уровень *допилить*
-For more on this subject, read [CSS Wizardry's article](http://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/) on dealing with specificity.
+Возможность выбирать элементы по ID в CSS является, как правило,  плохой практикой. ID селекторы предоставляют неоправданно высокий уровень специфичности и невозможность многоразового использования.
 Более подробная информация по этому вопросу: [Статья CSS Wizardry](http://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/)
 
 ### JavaScript хуки
 
-Avoid binding to the same class in both your CSS and JavaScript. Conflating the two often leads to, at a minimum, time wasted during refactoring when a developer must cross-reference each class they are changing, and at its worst, developers being afraid to make changes for fear of breaking functionality.
-Избегайте использования одинаковых имён классов в CSS и JavaScript. Использование одинаковых имён классов может привести, как минимум, к трате времени при рефакторинге, и как максимум к боязне разработчика сломать функционал вводом новых изменений.
-We recommend creating JavaScript-specific classes to bind to, prefixed with `.js-`:
+Избегайте использования одинаковых имён классов в CSS и JavaScript. Использование одинаковых имён классов может привести, как минимум, к трате времени при рефакторинге, и как максимум к боязне разработчика сломать функционал вводом изменений.
+
 Мы реккомендуем создавать отдельные имена классов для JavaScript используя префикс `.js-`:
 
 ```html
@@ -229,17 +207,14 @@ Use `0` instead of `none` to specify that a style has no border.
 
 ### Синтаксис
 
-* Use the `.scss` syntax, never the original `.sass` syntax
 * Всегда используйте `.scss` синтаксис, и никогда, оригинальный `.sass` синтаксис.
-* Order your regular CSS and `@include` declarations logically (see below)
 * Упорядочивайте обычный CSS и `@include`-объявления логически.
 
 ### Порядок объявления свойств
 
 1. Объявления свойств
 
-    List all standard property declarations, anything that isn't an `@include` or a nested selector.
-    Перечислите все стандартные свойства объявления, всё что не является `@include`-объявлением или вложенным селектором
+    Перечислите все стандартные объявления свойств, всё что не является `@include`-объявлением или вложенным селектором.
 
     ```scss
     .btn-green {
@@ -251,8 +226,7 @@ Use `0` instead of `none` to specify that a style has no border.
 
 2. `@include`-объявления
 
-    Grouping `@include`s at the end makes it easier to read the entire selector.
-    Группирование `@include`-объявлений в конце селектора делает его более читаемым.
+    Группирование `@include`-объявлений в конце правила делает его более читаемым.
 
     ```scss
     .btn-green {
