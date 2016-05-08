@@ -5,7 +5,7 @@
 ## Содержание
 
   1. [Терминология](#terminology)
-    - [Правило декларации](#rule-declaration)
+    - [Правила декларации](#rule-declaration)
     - [Селекторы](#selectors)
     - [Свойства](#properties)
   1. [CSS](#css)
@@ -14,7 +14,7 @@
     - [Объектно-ориентированный CSS и БЭМ](#oocss-and-bem)
     - [ID Селектор](#id-selectors)
     - [Хуки JavaScript](#javascript-hooks)
-    - [Граница](#border)
+    - [Границы](#border)
   1. [Sass](#sass)
     - [Синтаксис](#syntax)
     - [Порядок объявления свойств](#ordering-of-property-declarations)
@@ -28,7 +28,6 @@
 
 ### Объявление правил
 
-A “rule declaration” is the name given to a selector (or a group of selectors) with an accompanying group of properties. Here's an example:
 "Объявление правил" это: имя данное селектору (или группе селекторов) с сопутствующими им свойствами. Например:
 
 ```css
@@ -40,8 +39,7 @@ A “rule declaration” is the name given to a selector (or a group of selector
 
 ### Селекторы
 
-In a rule declaration, “selectors” are the bits that determine which elements in the DOM tree will be styled by the defined properties. Selectors can match HTML elements, as well as an element's class, ID, or any of its attributes. Here are some examples of selectors:
-В объявление правил, "селекторы" это части которые определяют к какому элементу DOM дерева будут применены правила стилей. Селекторы могут соответствовать HTML элементу, а так-же классу элемента, ID или любому другому атрибуту этого элемента. Вот несколько примеров:
+В объявлении правил, "селекторы",  это части которые определяют к какому элементу DOM дерева будут применены правила стилей. Селекторы могут соответствовать HTML элементу, а так-же классу элемента, ID или любому другому атрибуту этого элемента. Вот несколько примеров:
 
 
 ```css
@@ -56,8 +54,9 @@ In a rule declaration, “selectors” are the bits that determine which element
 
 ### Свойства
 
-Finally, properties are what give the selected elements of a rule declaration their style. Properties are key-value pairs, and a rule declaration can contain one or more property declarations. Property declarations look like this:
-И, наконец, свойства, которые дают выбранным элементам их стиль. Свойства объявляются в виде пары "ключ-значение" и объявления правил могут содержать одно или несколько свойств. Объявление свойств может выглядеть так:
+И наконец свойства, которые придают выбранным элементам их стиль. Свойства объявляются в виде пары "ключ-значение" и объявления правил могут содержать одно или несколько свойств. Объявление свойств может выглядеть так:
+
+
 ```css
 /* some selector */ {
   background: #f1f1f1;
@@ -69,12 +68,9 @@ Finally, properties are what give the selected elements of a rule declaration th
 
 ### Форматтировение
 
-* Use soft tabs (2 spaces) for indentation
 * Используйте 2 пробела для отступов
-* Prefer dashes over camelCasing in class names.
-* Отдавайте предпочтение тире в именах классов вместо CamelCase 
-  - Underscores and PascalCasing are okay if you are using BEM (смотри [OOCSS and BEM](#oocss-and-bem) below).
-  - Подчеркивания и PascalCasing допустимы если вы используете БЭМ (смотри [Объектно-ориентированный CSS и БЭМ](#oocss-and-bem) далее)
+* Предпочитают подчеркивание CamelCase'у в именах классов.
+  - Подчеркивания и PascalCasing допустимы, если вы используете БЭМ (смотри [Объектно-ориентированный CSS и БЭМ](#oocss-and-bem) далее)
 * Do not use ID selectors
 * Не используйте селекторы по ID
 * When using multiple selectors in a rule declaration, give each selector its own line.
