@@ -2,10 +2,10 @@
 
 *Наиболее разумный подход к CSS и Sass*
 
-## Содержание
+<h2 id="table-of-contents">Содержание</h2>
 
   1. [Терминология](#terminology)
-    - [Правила декларации](#rule-declaration)
+    - [Объявление правил](#rule-declaration)
     - [Селекторы](#selectors)
     - [Свойства](#properties)
   1. [CSS](#css)
@@ -22,11 +22,11 @@
     - [Миксины](#mixins)
     - [Extend directive](#extend-directive)
     - [Вложенные селекторы](#nested-selectors)
-  1. [Переводы](#translation)
+  1. [Переводы](#translations)
 
-## Терминология
+<h2 id="terminology">Терминология</h2>
 
-### Объявление правил
+<h3 id="rule-declaration">Объявление правил</h3>
 
 "Объявление правил" это имя данное селектору (или группе селекторов) с сопутствующими ему свойствами. Например:
 
@@ -37,7 +37,7 @@
 }
 ```
 
-### Селекторы
+<h3 id="selectors">Селекторы</h3>
 
 В объявлении правил, "селекторы",  это части которые определяют к какому элементу DOM дерева будут применены правила стилей. Селекторы могут соответствовать HTML элементу, а так-же классу элемента, ID или любому другому атрибуту этого элемента. Вот несколько примеров:
 
@@ -52,7 +52,7 @@
 }
 ```
 
-### Свойства
+<h3 id="properties">Свойства</h3>
 
 И наконец свойства, которые придают выбранным элементам их стиль. Свойства объявляются в виде пары "ключ-значение" и объявления правил могут содержать одно или несколько свойств. Объявление свойств может выглядеть так:
 
@@ -66,7 +66,7 @@
 
 ## CSS
 
-### Форматирование
+<h3 id="formatting">Форматирование</h3>
 
 * Используйте 2 пробела для отступов.
 * Предпочитайте подчеркивание CamelCase'у в именах классов.
@@ -107,7 +107,7 @@
 }
 ```
 
-### Комментарии
+<h3 id="comments">Комментарии</h3>
 
 * Предпочитайте однострочные (`//`) комментарии многострочным .
 * Рекомендуется писать комментарии в отдельные строки. Старайтесь избегать комментариев в конце строки.
@@ -116,7 +116,7 @@
   - Использование z-index
   - Совместимость с браузерами или CSS-хаки
 
-### Объектно-ориентированный CSS и БЭМ
+<h3 id="oocss-and-bem">Объектно-ориентированный CSS и БЭМ</h3>
 
 Мы рекомендуем комбинировать Объектно-ориентированный CSS и БЭМ по следующим причинам:
 
@@ -167,13 +167,13 @@ function ListingCard() {
   * `.ListingCard__title` является "элементом" и представляет дочерний компонент `.ListingCard` который позволяет составить блок в целом.
   * `.ListingCard--featured` является "модификатором" и представляет разные состояния `.ListingCard`.
 
-### Селекторы по ID
+<h3 id="id-selectors">Селекторы по ID</h3>
 
 While it is possible to select elements by ID in CSS, it should generally be considered an anti-pattern. ID selectors introduce an unnecessarily high level of [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) to your rule declarations, and they are not reusable.
 Возможность выбирать элементы по ID в CSS является, как правило,  плохой практикой. ID селекторы предоставляют неоправданно высокий уровень специфичности и невозможность многоразового использования.
 Более подробная информация по этому вопросу: [Статья CSS Wizardry](http://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/)
 
-### JavaScript хуки
+<h3 id="javascript-hooks">JavaScript хуки</h3>
 
 Избегайте использования одинаковых имён классов в CSS и JavaScript. Использование одинаковых имён классов может привести, как минимум, к трате времени при рефакторинге, и как максимум к боязне разработчика сломать функционал вводом изменений.
 
@@ -183,7 +183,7 @@ While it is possible to select elements by ID in CSS, it should generally be con
 <button class="btn btn-primary js-request-to-book">Request to Book</button>
 ```
 
-### Border
+<h3 id="border">Границы</h3>
 
 Use `0` instead of `none` to specify that a style has no border.
 
@@ -205,12 +205,12 @@ Use `0` instead of `none` to specify that a style has no border.
 
 ## Sass
 
-### Синтаксис
+<h3 id="syntax">Синтаксис</h3>
 
 * Всегда используйте `.scss` синтаксис, и никогда, оригинальный `.sass` синтаксис.
 * Упорядочивайте обычный CSS и `@include`-объявления логически.
 
-### Порядок объявления свойств
+<h3 id="ordering-of-property-declarations">Порядок объявления свойств</h3>
 
 1. Объявления свойств
 
@@ -254,19 +254,26 @@ Use `0` instead of `none` to specify that a style has no border.
     }
     ```
 
-### Переменные
+<h3 id="variables">Переменные</h3>
 
 Prefer dash-cased variable names (e.g. `$my-variable`) over camelCased or snake_cased variable names. It is acceptable to prefix variable names that are intended to be used only within the same file with an underscore (e.g. `$_my-variable`).
 Отдавайте предпочтение именам переменных разделенных тире (например `$my-variable`). Допускается использование подчеркивания в виде префикса для имён которые будут использоваться в пределах одного файла (например `$_my-variable`).
-### Миксины
+
+
+<h3 id="mixins">Миксины</h3>
 
 Mixins should be used to DRY up your code, add clarity, or abstract complexity--in much the same way as well-named functions. Mixins that accept no arguments can be useful for this, but note that if you are not compressing your payload (e.g. gzip), this may contribute to unnecessary code duplication in the resulting styles.
 Миксины должны использоваться для поддержания чистоты и ясности кода, или абстрактной сложности, во многом так же, как и хорошо названные функции. Миксины не принимающие никаких аргументов могут быть полезны для этого, но нужно иметь в виду что если вы не сжимаете свои файлы (например gzip), это может привести к лишнему повторению кода.
-### Extend directive допилить
+
+
+<h3 id="extend-directive">Extend directive допилить</h3>
 
 `@extend` should be avoided because it has unintuitive and potentially dangerous behavior, especially when used with nested selectors. Even extending top-level placeholder selectors can cause problems if the order of selectors ends up changing later (e.g. if they are in other files and the order the files are loaded shifts). Gzipping should handle most of the savings you would have gained by using `@extend`, and you can DRY up your stylesheets nicely with mixins.
 Использование `@extend` необходимо избегать из-за его  неинтуитивного поведения и потенциальной опасности в поведение, особенно при использование вместе с вложенными селекторами. Даже *допилить* селекторов верхнего уровня может создать проблемы, если в будущем будет изменён порядок селекторов. Сжатие должно обрабатывать большую часть сбережений вы получили бы с помощью *допилить*.
+
+
 ### Вложенные селекторы
+<h3 id="nested-selectors">Вложенные селекторы</h3>
 
 **Do not nest selectors more than three levels deep!**
 **Вложенные селекторы не должны быть глубже трёх вложений**
@@ -296,7 +303,9 @@ Again: **never nest ID selectors!**
 И вновь: **никогда не используйте ID селекторы!**
 If you must use an ID selector in the first place (and you should really try not to), they should never be nested. If you find yourself doing this, you need to revisit your markup, or figure out why such strong specificity is needed. If you are writing well formed HTML and CSS, you should **never** need to do this.
 Если вы должны использовать ID селектор (вы действительно должно постараться этого не делать), он никогда не должен быть вложен. Если вы обнаружили это в своём коде, вам нужно пересмотреть разметку, или выяснить, почему нужна такая сильная специфика. Если вы пишете хорошо сформированные HTML и CSS, вы **никогда** не должны делать это.  
-## Перевод
+
+
+<h2 id="translations">Переводы</h2>
 
   This style guide is also available in other languages:
   Этот гид по стилю так-же доступен в других языках:
