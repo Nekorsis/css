@@ -169,7 +169,6 @@ function ListingCard() {
 
 <h3 id="id-selectors">Селекторы по ID</h3>
 
-While it is possible to select elements by ID in CSS, it should generally be considered an anti-pattern. ID selectors introduce an unnecessarily high level of [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) to your rule declarations, and they are not reusable.
 Возможность выбирать элементы по ID в CSS является, как правило,  плохой практикой. ID селекторы предоставляют неоправданно высокий уровень специфичности и невозможность многоразового использования.
 Более подробная информация по этому вопросу: [Статья CSS Wizardry](http://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/)
 
@@ -240,7 +239,7 @@ Use `0` instead of `none` to specify that a style has no border.
 3. Вложенные селекторы
 
     Nested selectors, _if necessary_, go last, and nothing goes after them. Add whitespace between your rule declarations and nested selectors, as well as between adjacent nested selectors. Apply the same guidelines as above to your nested selectors.
-    Вложенные селекторы, _если необходимо_, идут последними, и ничего не должно быть после них. Добавьте пробел между объявлением правила и вложенным селектором, а так-же между смежными вложенными селекторами. Примените те же принципы, что и  для ваших вложенных селекторов.
+    Вложенные селекторы, _если необходимо_, идут последними, и ничего не должно быть после них. Добавьте пробел между объявлением правила и вложенным селектором, а так-же между смежными вложенными селекторами. Применяйте эти принципы, к вашим вложенным селекторам.
 
     ```scss
     .btn {
