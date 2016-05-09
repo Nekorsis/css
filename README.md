@@ -22,7 +22,7 @@
     - [Миксины](#mixins)
     - [Extend directive](#extend-directive)
     - [Вложенные селекторы](#nested-selectors)
-  1. [Переводы](#translation)
+  1. [Переводы](#translations)
 
 <h2 id="terminology">Терминология</h2>
 
@@ -303,7 +303,9 @@ Again: **never nest ID selectors!**
 И вновь: **никогда не используйте ID селекторы!**
 If you must use an ID selector in the first place (and you should really try not to), they should never be nested. If you find yourself doing this, you need to revisit your markup, or figure out why such strong specificity is needed. If you are writing well formed HTML and CSS, you should **never** need to do this.
 Если вы должны использовать ID селектор (вы действительно должно постараться этого не делать), он никогда не должен быть вложен. Если вы обнаружили это в своём коде, вам нужно пересмотреть разметку, или выяснить, почему нужна такая сильная специфика. Если вы пишете хорошо сформированные HTML и CSS, вы **никогда** не должны делать это.  
-## Перевод
+
+
+<h2 id="translations">Переводы</h2>
 
   This style guide is also available in other languages:
   Этот гид по стилю так-же доступен в других языках:
