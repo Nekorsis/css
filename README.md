@@ -111,8 +111,7 @@
 
 * Предпочитайте однострочные (`//`) комментарии многострочным.
 * Рекомендуется писать комментарии в отдельные строки. Старайтесь избегать комментариев в конце строки.
-* Write detailed comments for code that isn't self-documenting:
-* Пишите детальные комментарии для незадокументированных частей кода:
+* Пишите детальные комментарии для неочевидного кода:
   - Использование z-index
   - Совместимость с браузерами или CSS-хаки
 
@@ -184,9 +183,9 @@ function ListingCard() {
 
 <h3 id="border">Границы</h3>
 
-Use `0` instead of `none` to specify that a style has no border.
+Для обозначения отсутствия границы используйте `0` вместо `none`.
 
-**Bad**
+**Плохо**
 
 ```css
 .foo {
@@ -194,7 +193,7 @@ Use `0` instead of `none` to specify that a style has no border.
 }
 ```
 
-**Good**
+**Хорошо**
 
 ```css
 .foo {
@@ -225,7 +224,7 @@ Use `0` instead of `none` to specify that a style has no border.
 
 2. `@include`-объявления
 
-    Группирование `@include`-объявлений в конце правила делает его более читаемым.
+    Группирование `@include`-объявлений в конце правила делает код более читаемым.
 
     ```scss
     .btn-green {
@@ -238,7 +237,6 @@ Use `0` instead of `none` to specify that a style has no border.
 
 3. Вложенные селекторы
 
-    Nested selectors, _if necessary_, go last, and nothing goes after them. Add whitespace between your rule declarations and nested selectors, as well as between adjacent nested selectors. Apply the same guidelines as above to your nested selectors.
     Вложенные селекторы, _если необходимо_, идут последними, и ничего не должно идти после них. Добавьте пробел между объявлением правила и вложенным селектором, а также между смежными вложенными селекторами. Применяйте эти принципы, к вашим вложенным селекторам.
 
     ```scss
@@ -255,26 +253,22 @@ Use `0` instead of `none` to specify that a style has no border.
 
 <h3 id="variables">Переменные</h3>
 
-Prefer dash-cased variable names (e.g. `$my-variable`) over camelCased or snake_cased variable names. It is acceptable to prefix variable names that are intended to be used only within the same file with an underscore (e.g. `$_my-variable`).
 Отдавайте предпочтение именам переменных разделенных тире (например `$my-variable`). Допускается использование подчеркивания в виде префикса для имён, которые будут использоваться в пределах одного файла (например `$_my-variable`).
 
 
 <h3 id="mixins">Миксины</h3>
 
-Mixins should be used to DRY up your code, add clarity, or abstract complexity--in much the same way as well-named functions. Mixins that accept no arguments can be useful for this, but note that if you are not compressing your payload (e.g. gzip), this may contribute to unnecessary code duplication in the resulting styles.
 Миксины должны использоваться для поддержания чистоты и ясности кода, или абстрактной сложности, во многом так же, как и хорошо названные функции. Миксины, не принимающие никаких аргументов, могут быть полезны для этого. Но нужно иметь в виду, что если вы не сжимаете свои файлы (например gzip), это может привести к лишнему повторению кода.
 
 
 <h3 id="extend-directive">Extend directive допилить</h3>
 
-`@extend` should be avoided because it has unintuitive and potentially dangerous behavior, especially when used with nested selectors. Even extending top-level placeholder selectors can cause problems if the order of selectors ends up changing later (e.g. if they are in other files and the order the files are loaded shifts). Gzipping should handle most of the savings you would have gained by using `@extend`, and you can DRY up your stylesheets nicely with mixins.
-Использование `@extend` необходимо избегать из-за его неинтуитивности и потенциальной опасности в поведении, особенно при использование вместе со вложенными селекторами. Даже *допилить* селекторов верхнего уровня может создать проблемы, если в будущем будет изменён порядок селекторов. Сжатие должно обрабатывать большую часть сбережений вы получили бы с помощью *допилить*.
+Использование `@extend` необходимо избегать из-за его неинтуитивности и потенциальной опасности в поведении, особенно при использование вместе со вложенными селекторами. Даже наследование селекторов верхнего уровня может создать проблемы, если в будущем будет изменён порядок селекторов. Сжатие должно обрабатывать большую часть сбережений вы получили бы с помощью наследования.
 
 
 ### Вложенные селекторы
 <h3 id="nested-selectors">Вложенные селекторы</h3>
 
-**Do not nest selectors more than three levels deep!**
 **Вложенные селекторы не должны быть глубже трёх вложений**
 
 ```scss
@@ -287,21 +281,17 @@ Mixins should be used to DRY up your code, add clarity, or abstract complexity--
 }
 ```
 
-When selectors become this long, you're likely writing CSS that is:
-Когда селекторы становятся слишком длинными, скорее всего вы пишете CSS, который:
+Когда селекторы становятся слишком длинными (например как в примере показанном выше), скорее всего вы пишете CSS, который:
 
-* Strongly coupled to the HTML (fragile) *—OR—*
-* Слишком сильно привязан к HTML (хрупкий) *—OR—*
-* Overly specific (powerful) *—OR—*
-* Слишком специфичен *—OR—*
-* Not reusable
-* Не многоразовый *—OR—*
+* Слишком сильно привязан к HTML (хрупкий)
+* Слишком специфичен 
+* Не многоразовый 
 
 
-Again: **never nest ID selectors!**
-И вновь: **никогда не используйте ID селекторы!**
+
+И вновь: **никогда не используйте селекторы по ID!**
 If you must use an ID selector in the first place (and you should really try not to), they should never be nested. If you find yourself doing this, you need to revisit your markup, or figure out why such strong specificity is needed. If you are writing well formed HTML and CSS, you should **never** need to do this.
-Если вы должны использовать ID селектор (вы действительно должно постараться этого не делать), он никогда не должен быть вложенным. Если вы обнаружили это в своём коде - вам нужно пересмотреть разметку или выяснить, почему нужна такая сильная специфика. Если вы пишете хорошо сформированные HTML и CSS, вы **никогда** не должны делать это.  
+Если вы вынуждены использовать ID селекторы (вы действительно должно постараться этого не делать), они никогда не должены быть вложенными. Если вы обнаружили это в своём коде - вам нужно пересмотреть разметку или выяснить, почему нужна такая сильная специфика. Если вы имеете правильно написанные  HTML и CSS, вам **никогда** не придётся делать этого.  
 
 
 <h2 id="translations">Переводы</h2>
@@ -310,3 +300,4 @@ If you must use an ID selector in the first place (and you should really try not
   Этот гид по стилю также доступен в других языках:
 
   - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: [Zhangjd/css-style-guide](https://github.com/Zhangjd/css-style-guide)
+  -  - ![ru](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png) **Russian**: [Zhangjd/css-style-guide](https://github.com/Zhangjd/css-style-guide)
