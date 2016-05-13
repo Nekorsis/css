@@ -300,4 +300,4 @@ If you must use an ID selector in the first place (and you should really try not
   Этот гид по стилю также доступен в других языках:
 
   - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: [Zhangjd/css-style-guide](https://github.com/Zhangjd/css-style-guide)
-  -  - ![ru](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png) **Russian**: [Zhangjd/css-style-guide](https://github.com/Zhangjd/css-style-guide)
+  - ![ru](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png) **Russian**: [Zhangjd/css-style-guide](https://github.com/Nekorsis/css-style-guide)
