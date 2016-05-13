@@ -288,16 +288,14 @@ function ListingCard() {
 * Не многоразовый 
 
 
-
 И вновь: **никогда не используйте селекторы по ID!**
-If you must use an ID selector in the first place (and you should really try not to), they should never be nested. If you find yourself doing this, you need to revisit your markup, or figure out why such strong specificity is needed. If you are writing well formed HTML and CSS, you should **never** need to do this.
 Если вы вынуждены использовать ID селекторы (вы действительно должно постараться этого не делать), они никогда не должены быть вложенными. Если вы обнаружили это в своём коде - вам нужно пересмотреть разметку или выяснить, почему нужна такая сильная специфика. Если вы имеете правильно написанные  HTML и CSS, вам **никогда** не придётся делать этого.  
 
 
 <h2 id="translations">Переводы</h2>
 
-  This style guide is also available in other languages:
-  Этот гид по стилю также доступен в других языках:
+  Этот гид по стилю также доступен на других языках:
 
+  - ![en](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/United-Kingdom.png) **English**: [Airbnb CSS /css-style-guide](https://github.com/airbnb/css)
   - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: [Zhangjd/css-style-guide](https://github.com/Zhangjd/css-style-guide)
   - ![ru](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png) **Russian**: [Nekorsis/css-style-guide](https://github.com/Nekorsis/css-style-guide)
