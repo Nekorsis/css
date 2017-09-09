@@ -4,25 +4,25 @@
 
 <h2 id="table-of-contents">Содержание</h2>
 
-  1. [Терминология](#terminology)
+1. [Терминология](#terminology)
     - [Объявление правил](#rule-declaration)
     - [Селекторы](#selectors)
     - [Свойства](#properties)
-  1. [CSS](#css)
+1. [CSS](#css)
     - [Форматирование](#formatting)
     - [Комментарии](#comments)
     - [Объектно-ориентированный CSS и БЭМ](#oocss-and-bem)
     - [ID Селектор](#id-selectors)
     - [Хуки JavaScript](#javascript-hooks)
     - [Границы](#border)
-  1. [Sass](#sass)
+1. [Sass](#sass)
     - [Синтаксис](#syntax)
     - [Порядок объявления свойств](#ordering-of-property-declarations)
     - [Переменные](#variables)
     - [Миксины](#mixins)
     - [Наследование](#extend-directive)
     - [Вложенные селекторы](#nested-selectors)
-  1. [Переводы](#translations)
+1. [Переводы](#translations)
 
 <h2 id="terminology">Терминология</h2>
 
@@ -63,6 +63,7 @@
   color: #333;
 }
 ```
+**[⬆ вверх](#table-of-contents)**
 
 ## CSS
 
@@ -73,7 +74,7 @@
   - Подчеркивания и PascalCasing допустимы, если вы используете БЭМ (смотри [Объектно-ориентированный CSS и БЭМ](#oocss-and-bem) далее)
 * Не используйте селекторы по ID.
 * Используя несколько селекторов в объявлении правила переносите каждый селектор на отдельную строку.
-<!--* Ставьте пробел перед открывающей скобкой `{`.
+* Ставьте пробел перед открывающей скобкой `{`.
 * В свойствах ставьте пробел после двоеточия `:`, но не перед.
 * После объявления свойства переносите закрывающую скобку `}` на новую строку. 
 * Делайте отступ в одну строку между объявлениями правил.
@@ -200,6 +201,7 @@ function ListingCard() {
   border: 0;
 }
 ```
+**[⬆ вверх](#table-of-contents)**
 
 ## Sass
 
@@ -290,10 +292,22 @@ function ListingCard() {
 И вновь: **никогда не используйте селекторы по ID!**
 Если вы вынуждены использовать селекторы по ID (вы действительно должны постараться этого не делать), они никогда не должны быть вложенными. Если вы обнаружили это в своём коде - пересмотрите разметку или выясните, зачем нужна такая сильная специфика. Если у вас правильно написанны  HTML и CSS, вам **никогда** не придётся делать этого.  
 
+**[⬆ вверх](#table-of-contents)**
 
 <h2 id="translations">Переводы</h2>
 
   Этот гид по стилю также доступен на других языках:
 
-  - ![en](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/United-Kingdom.png) **English**: [Airbnb CSS /css](https://github.com/airbnb/css)
+  - ![id](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Indonesia.png) **Bahasa Indonesia**: [mazipan/css-style-guide](https://github.com/mazipan/css-style-guide)
+  - ![tw](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Taiwan.png) **Chinese (Traditional)**: [ArvinH/css-style-guide](https://github.com/ArvinH/css-style-guide)
   - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: [Zhangjd/css-style-guide](https://github.com/Zhangjd/css-style-guide)
+  - ![fr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/France.png) **French**: [mat-u/css-style-guide](https://github.com/mat-u/css-style-guide)
+  - ![ja](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Japan.png) **Japanese**: [nao215/css-style-guide](https://github.com/nao215/css-style-guide)
+  - ![ko](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png) **Korean**: [CodeMakeBros/css-style-guide](https://github.com/CodeMakeBros/css-style-guide)
+  - ![PT-BR](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png) **Portuguese**: [felipevolpatto/css-style-guide](https://github.com/felipevolpatto/css-style-guide)
+  - ![ru](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png) **Russian**: [Nekorsis/css-style-guide](https://github.com/Nekorsis/css-style-guide)
+  - ![es](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Spain.png) **Spanish**: [ismamz/guia-de-estilo-css](https://github.com/ismamz/guia-de-estilo-css)
+  - ![vn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) **Vietnamese**: [trungk18/css-style-guide](https://github.com/trungk18/css-style-guide)
+  - ![vn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Italy.png) **Italian**: [antoniofull/linee-guida-css](https://github.com/antoniofull/linee-guida-css)
+
+**[⬆ вверх](#table-of-contents)**
